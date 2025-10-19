@@ -1,0 +1,151 @@
+/* 基本設定とフォントの適用 */
+:root {
+  --white: #ffffff;
+  --light-gray: #f8f9fa; /* 薄い背景色（白基調を強調） */
+  --gray: #ced4da;
+  --dark-gray: #495057;
+  --blue: #1a73e8; /* Googleの青色に近いメインカラー */
+  --light-blue: #e8f0fe; /* 薄水色（ホバーやアクセントに） */
+  --shadow: rgba(60, 64, 67, 0.15); /* Googleライクな控えめなシャドウ */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Google製品でよく使われるフォント */
+  background-color: var(--light-gray); /* 白基調 */
+  color: var(--dark-gray);
+  line-height: 1.6;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh; /* 画面全体を使う */
+}
+
+/* コンテナで中央寄せと最大幅を設定 (レスポンシブ対応) */
+.container {
+  width: 100%;
+  max-width: 600px; /* フォームに適切な最大幅 */
+}
+
+/* ヘッダーのデザイン */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 10px 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 400; 
+}
+
+/* ロゴの色分け */
+.logo-class {
+  color: var(--dark-gray);
+  font-weight: 500;
+}
+
+.logo-hand {
+  color: var(--blue); /* 青色アクセント */
+  font-weight: 700;
+}
+
+/* カード形式のメインコンテンツエリア */
+.card {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 8px; /* 角を丸く */
+  /* Googleライクな控えめな影 */
+  box-shadow: 0 1px 3px 0 var(--shadow), 0 1px 2px 0 var(--shadow); 
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--blue);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--light-blue); /* 薄水色をアクセントに */
+  padding-bottom: 10px;
+}
+
+/* フォームグループ */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--dark-gray);
+}
+
+/* 入力フィールドとセレクトボックス */
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--gray);
+  border-radius: 4px;
+  font-size: 1rem;
+  color: var(--dark-gray);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  border-color: var(--blue); /* フォーカス時に青色 */
+  box-shadow: 0 0 0 1px var(--blue); /* 薄い青色のシャドウ */
+  outline: none;
+}
+
+/* テキストエリア */
+textarea.form-control {
+  resize: vertical; /* 縦方向のみリサイズ可能 */
+}
+
+/* 挙手ボタン (青色アクセント) */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--blue);
+  color: var(--white);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #1669e2; /* 濃いめの青 */
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* レスポンシブ対応の調整 */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .btn-primary {
+    width: 100%; /* 小さい画面ではボタンを全幅に */
+  }
+}
